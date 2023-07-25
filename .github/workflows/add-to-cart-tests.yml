@@ -1,4 +1,4 @@
-name: Replay test
+name: Add to cart project
 on: [workflow_dispatch]
 jobs:
   cypress-run:
@@ -12,6 +12,10 @@ jobs:
           browser: replay-chromium
           start: npm run dev
           working-directory: add-to-cart
+          record: true
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload replays
         if: always()
         uses: replayio/action-upload@v0.5.0
