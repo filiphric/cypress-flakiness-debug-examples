@@ -16,8 +16,8 @@ jobs:
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Upload replays
-        if: always()
-        uses: replayio/action-upload@v0.5.0
-        with:
-          api-key: ${{ secrets.RECORD_REPLAY_API_KEY }}
+      # - name: Upload replays
+      #   if: always()
+      #   uses: replayio/action-upload@v0.5.0
+      #   with:
+      #     api-key: ${{ secrets.RECORD_REPLAY_API_KEY }}
