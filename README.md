@@ -17,3 +17,4 @@ Each mini-project contains a short `README.md` with explanation, and most import
 | Project | Description | Replay.io | YouTube |
 | --- | ----------- | --- | --- |
 | [Add to Cart project](./add-to-cart/README.md) | Adding an item to cart where a page checks for availability | ▶️ [Replay.io link](https://app.replay.io/recording/cypresse2especcyts--ff8097ba-1d68-406f-8c41-2f8259d03a01) | ▶️ [YouTube link](https://youtu.be/4wL8Qi9vjho)
+| [Google login project](./add-to-cart/README.md) | Filling out an email field | ▶️ [Replay.io link](https://app.replay.io/recording/cypresse2especcyts--ff8097ba-1d68-406f-8c41-2f8259d03a01) | ▶️ TBD

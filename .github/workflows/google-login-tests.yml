@@ -1,4 +1,4 @@
-name: Add to cart project
+name: Google login project
 on: [workflow_dispatch]
 jobs:
   cypress-run:
@@ -11,8 +11,8 @@ jobs:
         with:
           browser: replay-chromium
           start: npm run dev
-          working-directory: add-to-cart
-          group: add-to-cart
+          working-directory: google-login
+          group: google-login
           record: true
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
