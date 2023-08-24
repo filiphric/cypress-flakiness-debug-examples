@@ -14,7 +14,7 @@
     "@types/react": "18.2.15",
     "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.14",
-    "cypress": "^12.17.2",
+    "cypress": "https://cdn.cypress.io/beta/npm/13.0.0/linux-x64/release/13.0.0-5d1e07a7aa228745b5e742aa3e912fcbd4cb217f/cypress.tgz",
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.10",
     "next": "13.4.10",
