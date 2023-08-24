@@ -14,9 +14,10 @@ const GoogleLogin: React.FC = () => {
     setTimeout(() => {
       if (emailInputRef.current) {
         emailInputRef.current.value = '';
+        emailInputRef.current.className = 'focused';
         emailInputRef.current.focus();
       }
-    }, timeout); // simulated delay for validation loading
+    }, timeout); // simulates a delay of element focus
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -63,8 +64,7 @@ const GoogleLogin: React.FC = () => {
             <div>
               <input
                 ref={emailInputRef}
-                className={`appearance-none rounded relative block w-full px-3 py-2 border h-14 placeholder-gray-600 ${emailError ? 'border-red-300' : 'border-gray-300'}
-          text-gray-700 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10`}
+                className={emailError ? 'error' : undefined}
                 name="email"
                 type="email"
                 placeholder="Email or phone"
