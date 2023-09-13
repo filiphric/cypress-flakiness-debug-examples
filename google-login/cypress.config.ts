@@ -8,7 +8,10 @@ export default defineConfig({
     baseUrl: 'http://localhost:3000',
     fixturesFolder: false,
     supportFile: 'cypress/support.ts',
-    retries: 2,
+    retries: {
+      runMode: 2,
+      openMode: 0
+    },
     setupNodeEvents(on, config) {
       replay(on, config);
       return config
