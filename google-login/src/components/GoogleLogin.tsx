@@ -13,7 +13,7 @@ const GoogleLogin: React.FC = () => {
   useEffect(() => {
     setTimeout(() => {
       if (emailInputRef.current) {
-        emailInputRef.current.value = '';
+        setEmail('')
         emailInputRef.current.className = 'focused';
         emailInputRef.current.focus();
       }
@@ -46,7 +46,7 @@ const GoogleLogin: React.FC = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="w-full max-w-md bg-white p-12 border border-gray-300 rounded-lg shadow-lg">
+      <div className="w-full max-w-md bg-white p-12 border border-gray-300 rounded-lg shadow-lg" data-cy="login-module">
       {loggedIn ? 
       <div>
         <h2 className="mt-4 text-center text-2xl text-gray-800">You are logged in!</h2>
