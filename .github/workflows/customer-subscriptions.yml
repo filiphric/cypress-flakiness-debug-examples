@@ -1,0 +1,24 @@
+name: Customer subscriptions project
+on: [workflow_dispatch]
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Cypress run
+        uses: cypress-io/github-action@v5
+        with:
+          browser: replay-chromium
+          start: npm run dev
+          working-directory: customer-subscriptions
+          group: customer-subscriptions
+          # record: true
+        # env:
+        #   CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+        #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload replays
+        if: always()
+        uses: replayio/action-upload@v0.5.0
+        with:
+          api-key: ${{ secrets.ADD_TO_CART_RECORD_REPLAY_API_KEY }}

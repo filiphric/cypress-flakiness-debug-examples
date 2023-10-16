@@ -1,9 +1,8 @@
 /// <reference types="cypress" />
 import { defineConfig } from "cypress";
-import replay from "@replayio/cypress";
+import replayPlugin from "@replayio/cypress";
 
 export default defineConfig({
-  projectId: 'hejdx4',
   e2e: {
     baseUrl: 'http://localhost:3000',
     fixturesFolder: false,
@@ -13,7 +12,7 @@ export default defineConfig({
       openMode: 0
     },
     setupNodeEvents(on, config) {
-      replay(on, config);
+      replayPlugin(on, config);
       return config
     },
    },

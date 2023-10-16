@@ -10,6 +10,8 @@ const SubscriptionList: React.FC = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [selectedSubscription, setSelectedSubscription] = useState<Subscription | null>(null);
 
+  const timeout = Math.floor(Math.random() * 200)
+
   useEffect(() => {
     // Fetch subscriptions from API
     fetch('/api/subscriptions')
@@ -27,6 +29,7 @@ const SubscriptionList: React.FC = () => {
         setError(error.message);
         setLoading(false);
       });
+      setTimeout(() => setModalOpen(true), timeout)
   }, []);
 
   if (loading) {
@@ -60,7 +63,7 @@ const SubscriptionList: React.FC = () => {
   
 
   return (
-    <div>
+    <div role="main">
       <div className='p-20 bg-slate-700 h-screen'>
         <h1 className='font-bold text-3xl py-7 text-white'>Customer subscriptions</h1>
         <div className="bg-white shadow-md rounded-lg p-6 space-y-2">
@@ -75,7 +78,7 @@ const SubscriptionList: React.FC = () => {
       </div>
       <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)}>
         <div className="space-y-4">
-          <h2 className="text-xl font-bold">{selectedSubscription?.fullName}</h2>
+          {/* <h2 className="text-xl font-bold">{selectedSubscription?.fullName}</h2>
           <p>{selectedSubscription?.email}</p>
           <p className="capitalize">{selectedSubscription?.status}</p>
           {(selectedSubscription?.status === 'trial' || selectedSubscription?.status === 'inactive') && (
@@ -86,7 +89,12 @@ const SubscriptionList: React.FC = () => {
               Activate Subscription
             </button>
           )}
-          {selectedSubscription?.status === 'active' && <p className='text-green-500'>Subscription was activated</p>}
+          {selectedSubscription?.status === 'active' && <p className='text-green-500'>Subscription was activated</p>} */}
+          <h2 className="text-xl font-bold">Hello there!</h2>
+          <div>We have a brand new user experience for you that will make you 10 times more productive!</div>
+          <button className="bg-blue-500 text-white px-4 py-2 rounded-md">
+            Try new experience
+          </button>
         </div>
       </Modal>
     </div>

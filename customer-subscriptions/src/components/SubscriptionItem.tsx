@@ -15,7 +15,7 @@ const SubscriptionItem: React.FC<SubscriptionItemProps> = ({ subscription, onOpe
     >
       <div className={`w-4 h-4 rounded-full mr-4 ${subscription.status === 'active' ? 'bg-green-500' : 'bg-gray-300'}`}></div>
       <div className="flex-1">
-        <h3 className="text-lg font-semibold">{subscription.fullName}</h3>
+        <h2 className="text-lg font-semibold">{subscription.fullName}</h2>
         <p className="text-gray-500">{subscription.email}</p>
       </div>
       <p className="text-sm text-gray-700 capitalize">{subscription.status}</p>

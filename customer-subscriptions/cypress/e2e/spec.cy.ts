@@ -1,8 +1,9 @@
-it('Logs in the user', () => {
-  let randomItem = Math.floor(Math.random() * 7)
-
+beforeEach(() => {
   cy.visit('/')
-  cy.get('[data-cy=customer-item]').eq(randomItem).click()
-  cy.contains('Activate Subscription').click()
-  cy.contains('Subscription was activated').should('be.visible')
+  cy.contains('Loading').should('not.exist')
+  cy.injectAxe()
+})
+
+it('Checks accessibility of a page', () => {
+  cy.checkA11y()
 })
