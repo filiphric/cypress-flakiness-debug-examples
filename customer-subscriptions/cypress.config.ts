@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 import { defineConfig } from "cypress";
-import replay from "@replayio/cypress";
+import replayPlugin from "@replayio/cypress";
 
 export default defineConfig({
   projectId: 'hejdx4',
@@ -13,7 +13,7 @@ export default defineConfig({
       openMode: 0
     },
     setupNodeEvents(on, config) {
-      replay(on, config);
+      replayPlugin(on, config);
       return config
     },
    },
