@@ -16,4 +16,4 @@ jobs:
         if: always()
         uses: replayio/action-upload@v0.5.1
         with:
-          api-key: ${{ secrets.ADD_TO_CART_RECORD_REPLAY_API_KEY }}
+          api-key: ${{ secrets.RECORD_REPLAY_API_KEY }}
