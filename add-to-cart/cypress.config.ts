@@ -1,20 +1,16 @@
 /// <reference types="cypress" />
 import { defineConfig } from "cypress";
-import replay from "@replayio/cypress";
+import { plugin as replayPlugin } from "@replayio/cypress";
 
 export default defineConfig({
   projectId: 'hejdx4',
-  e2e: {
-    baseUrl: 'http://localhost:3000',
-    fixturesFolder: false,
-    supportFile: 'cypress/support.ts',
-    retries: {
-      runMode: 2,
-      openMode: 0 
+    e2e: {
+      setupNodeEvents(on, config) {
+        replayPlugin(on, config, {
+          upload: true,
+          apiKey: process.env.REPLAY_API_KEY,
+        });
+        return config;
+      },
     },
-    setupNodeEvents(on, config) {
-      replay(on, config);
-      return config
-    },
-   },
-});
+  });
