@@ -1,1 +1,1 @@
-require('@replayio/cypress/support');
+import '@replayio/cypress/support';
