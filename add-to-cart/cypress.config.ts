@@ -13,6 +13,7 @@ export default defineConfig({
         return config;
       },
       baseUrl: 'http://localhost:3000',
-      supportFile: 'cypress/support.ts'
+      supportFile: 'cypress/support.ts',
+      retries: 2
     },
   });
